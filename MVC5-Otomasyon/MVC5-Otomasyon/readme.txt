@@ -11,3 +11,8 @@
 
 6 - Package manager console > update-database yazılır. Bu koddan sonra DB otomatik olarak oluşacaktır.
 7 - update-database -Force komutu DB de değişiklik olduğu zaman kullanılır.
+8 - https://startbootstrap.com/template/sb-admin adresine gidilerek template indirilir. 
+9 - Web klasorü içerisine atılarak düzenlemeler yapılır. 
+10 - WEb klasoru içerisinde index.html AdminLayout.cshtml içerisine tasınarak css yolları düzenlenir.
+11 - Main tagı kaldırılır.  @RenderBody() atılır.
+12 - 
