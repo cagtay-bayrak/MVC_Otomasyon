@@ -14,5 +14,9 @@ namespace MVC5_Otomasyon.Models.Classes
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
+
+        public Urun Urun { get; set; }
+        public Cariler Cariler { get; set; }
+        public Personel Personel { get; set; }
     }
 }
