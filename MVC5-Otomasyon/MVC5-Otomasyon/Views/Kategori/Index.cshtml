@@ -5,26 +5,30 @@
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<style>
-    .Hoverbutton {
-        fill: #9B9B9B;
-        color: black;
-    }
+<h4 style="margin-top:20px; text-align:center; color:green">Kategori Listesi</h4>
+<button class="btn buttonKategori" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
 
-        .Hoverbutton:hover {
-            border: solid 1px green;
-            font-weight: bold;
-        }
-</style>
-
-<h4 style="margin-top:20px;">Kategori Listesi</h4>
-
-<br />
-
-<button class="btn Hoverbutton" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
-
-<form class="form-group" method="post">
-    <table class="table table-bordered">
+@*<div id="toolbar">
+        <select class="form-control">
+            <option value="">Export Basic</option>
+            <option value="all">Export All</option>
+            <option value="selected">Export Selected</option>
+        </select>
+    </div>*@
+<table id="table"
+       data-toggle="table"
+       data-toolbar="#toolbar"
+       data-show-export="true"
+       data-pagination="true"
+       data-search="true"
+       data-maintain-selected="true"
+       data-page-size="15"
+       data-page-list="[5, 10, 20, 40, 50, 100, ALL]"
+       data-export-options='{
+         "fileName": "test",
+         "ignoreColumn": ["state"]
+       }'>
+    <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.KategoriID)
@@ -33,24 +37,24 @@
                 @Html.DisplayNameFor(model => model.KategoriAd)
             </th>
             <th></th>
+
         </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriAd)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.KategoriID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.KategoriID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.KategoriID })
+            </td>
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KategoriID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.KategoriAd)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.KategoriID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.KategoriID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.KategoriID })
-                </td>
-            </tr>
-        }
-
-    </table>
-</form>
+        </tr>
+    }
+</table>

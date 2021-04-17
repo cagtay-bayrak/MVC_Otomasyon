@@ -511,6 +511,21 @@ a > code {
   color: inherit;
 }
 
+.buttonKategori {
+    fill: #9B9B9B;
+    color: black;
+}
+
+    .buttonKategori:hover {
+        border: solid 1px green;
+        font-weight: bold;
+    }
+
+
+
+
+
+
 kbd {
   padding: 0.2rem 0.4rem;
   font-size: 87.5%;

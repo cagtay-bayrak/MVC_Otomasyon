@@ -76,8 +76,9 @@ C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\System.Web.WebPages.Ra
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\Newtonsoft.Json.xml
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\Antlr3.Runtime.pdb
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.csprojAssemblyReference.cache
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.csproj.CoreCompileInputs.cache
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.csproj.CopyComplete
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.dll
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.pdb
+C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\BootstrapTable.dll
+C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\BootstrapTable.xml
