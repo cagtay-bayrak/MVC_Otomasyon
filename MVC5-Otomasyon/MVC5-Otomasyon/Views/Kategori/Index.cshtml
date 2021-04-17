@@ -1,18 +1,56 @@
-﻿
+﻿@model IEnumerable<MVC5_Otomasyon.Models.Classes.Kategori>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
-<table class="table table-bordered" style="margin-top:20px;">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            Katagori Adı
-        </th>
-    </tr>
-</table>
-<button  class="btn btn-primary">Yeni Kategori</button>
+<style>
+    .Hoverbutton {
+        fill: #9B9B9B;
+        color: black;
+    }
 
+        .Hoverbutton:hover {
+            border: solid 1px green;
+            font-weight: bold;
+        }
+</style>
+
+<h4 style="margin-top:20px;">Kategori Listesi</h4>
+
+<br />
+
+<button class="btn Hoverbutton" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
+
+<form class="form-group" method="post">
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KategoriAd)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriAd)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.KategoriID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.KategoriID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.KategoriID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</form>

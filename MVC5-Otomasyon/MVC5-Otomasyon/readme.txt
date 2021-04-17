@@ -15,4 +15,10 @@
 9 - Web klasorü içerisine atılarak düzenlemeler yapılır. 
 10 - WEb klasoru içerisinde index.html AdminLayout.cshtml içerisine tasınarak css yolları düzenlenir.
 11 - Main tagı kaldırılır.  @RenderBody() atılır.
-12 - 
+12 - https://astronautweb.co/snippet/font-awesome/ adresine gidilerek istenilen icon seçilir. (fa-list-alt)
+  <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
+                          Ürünler
+                        </a>
+
+13 - using MVC5_Otomasyon.Models.Classes; listelenmek istenen controller eklenir. context - db erişim için
