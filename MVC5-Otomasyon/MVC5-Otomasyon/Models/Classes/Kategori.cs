@@ -12,7 +12,7 @@ namespace MVC5_Otomasyon.Models.Classes
         [Key]
         public int KategoriID { get; set; }
 
-
+        //[Required]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string KategoriAd { get; set; }

@@ -25,11 +25,13 @@ namespace MVC5_Otomasyon.Controllers
         [HttpPost]
         public ActionResult Create(Kategori k)
         {
+
             c.Kategoris.Add(k);
             c.SaveChanges();
 
             return RedirectToAction("Index");
-             
+
         }
+
     }
 }

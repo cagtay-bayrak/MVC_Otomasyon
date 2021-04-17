@@ -82,3 +82,4 @@ C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.d
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.pdb
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\BootstrapTable.dll
 C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\bin\BootstrapTable.xml
+C:\GitHub\MVC-Otomasyon\MVC5-Otomasyon\MVC5-Otomasyon\obj\Debug\MVC5-Otomasyon.csprojAssemblyReference.cache

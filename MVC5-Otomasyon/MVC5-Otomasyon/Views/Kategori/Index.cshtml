@@ -6,7 +6,6 @@
 }
 
 <h4 style="margin-top:20px; text-align:center; color:green">Kategori Listesi</h4>
-<button class="btn buttonKategori" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
 
 @*<div id="toolbar">
         <select class="form-control">
@@ -15,14 +14,25 @@
             <option value="selected">Export Selected</option>
         </select>
     </div>*@
+
+
+
+<div id="toolbar">
+    <button class="btn btnKategori" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
+    <button class="btn btnKategori1" type="submit" title="Düzenle"> <i class="fas fa-edit"></i></button>
+    <button class="btn btnKategori1" type="submit" title="Sil"> <i class="far fa-trash-alt"></i></button>
+
+   
+</div>
 <table id="table"
+       data-click-to-select="true"
        data-toggle="table"
        data-toolbar="#toolbar"
        data-show-export="true"
        data-pagination="true"
        data-search="true"
        data-maintain-selected="true"
-       data-page-size="15"
+       data-page-size="10"
        data-page-list="[5, 10, 20, 40, 50, 100, ALL]"
        data-export-options='{
          "fileName": "test",
@@ -30,6 +40,9 @@
        }'>
     <thead>
         <tr>
+
+            <th data-field="state" data-checkbox="true"></th>
+
             <th>
                 @Html.DisplayNameFor(model => model.KategoriID)
             </th>
@@ -43,6 +56,8 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td></td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.KategoriID)
             </td>
@@ -50,9 +65,6 @@
                 @Html.DisplayFor(modelItem => item.KategoriAd)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.KategoriID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.KategoriID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.KategoriID })
             </td>
 
         </tr>
