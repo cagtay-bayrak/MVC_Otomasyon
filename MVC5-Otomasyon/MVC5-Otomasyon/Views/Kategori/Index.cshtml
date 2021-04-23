@@ -19,11 +19,6 @@
 
 <div id="toolbar">
     <button class="btn btnKategori" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
-
-
-
-
-
 </div>
 <table id="table"
        data-click-to-select="true"
@@ -33,6 +28,8 @@
        data-pagination="true"
        data-search="true"
        data-maintain-selected="true"
+       data-sort-name="name"
+           data-sort-order="desc"
        data-page-size="10"
        data-page-list="[5, 10, 20, 40, 50, 100, ALL]"
        @*data-export-options='{
@@ -50,8 +47,9 @@
 
                 @Html.DisplayNameFor(model => model.KategoriID)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KategoriAd)
+            <th data-sortable="true">
+                <span>Kategori Adı</span>
+
             </th>
             <th></th>
 
@@ -72,13 +70,23 @@
             </td>
             <td>
 
-                @Html.ActionLink("Güncelle", "Edit", new { id = item.KategoriID }, new { @style = "color:#078F00;" }) |
+                @*@Html.ActionLink("Güncelle", "Edit", new { id = item.KategoriID }, new { @style = "color:#078F00;" }) |
 
-                @Html.ActionLink("Sil", "Delete", new { id = item.KategoriID }, new { @style = "color:red;" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.KategoriID }, new { @style = "color:red;" })*@
 
                 @*<button class="btn btnKategori1"   type="submit" title="Düzenle"> <i class="fas fa-edit"></i></button>
 
                     <button class="btn btnKategori1"   type="submit" title="Sil"> <i class="far fa-trash-alt"></i></button>*@
+
+
+                <a href="/Kategori/KategoriDelete/@item.KategoriID" class="button" title="Kaydı sil" style="color:red;">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+                &nbsp;
+                <a href='/Kategori/' class="button" title="Kaydı Güncelle">
+                    <i class="fa fa-edit" aria-hidden="true"></i>
+                </a>
+
             </td>
 
         </tr>

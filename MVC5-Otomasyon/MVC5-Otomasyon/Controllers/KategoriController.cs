@@ -10,10 +10,10 @@ namespace MVC5_Otomasyon.Controllers
     public class KategoriController : Controller
     {
         // GET: Kategori
-        Context c = new Context();
+        Context cntxt = new Context();
         public ActionResult Index()
         {
-            var values = c.Kategoris.ToList();
+            var values = cntxt.Kategoris.ToList();
             return View(values);
         }
 
@@ -25,13 +25,39 @@ namespace MVC5_Otomasyon.Controllers
         [HttpPost]
         public ActionResult Create(Kategori k)
         {
+            try
+            {
+                cntxt.Kategoris.Add(k);
+                cntxt.SaveChanges();
 
-            c.Kategoris.Add(k);
-            c.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
 
-            return RedirectToAction("Index");
+                throw ex;
+            }
+
+         
 
         }
 
+
+        public ActionResult KategoriDelete(int id)
+        {
+            try
+            {
+                var ktg = cntxt.Kategoris.Find(id);
+                cntxt.Kategoris.Remove(ktg);
+                cntxt.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+          
+        }
     }
 }
