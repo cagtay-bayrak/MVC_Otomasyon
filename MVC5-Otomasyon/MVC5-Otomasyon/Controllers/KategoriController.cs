@@ -38,10 +38,9 @@ namespace MVC5_Otomasyon.Controllers
                 throw ex;
             }
 
-         
+
 
         }
-
 
         public ActionResult KategoriDelete(int id)
         {
@@ -57,7 +56,35 @@ namespace MVC5_Otomasyon.Controllers
 
                 throw ex;
             }
-          
+
         }
+
+        // Kategori güncellemek için kayıtları getir
+        public ActionResult Kategoribring(int id)
+        {
+            var ktg = cntxt.Kategoris.Find(id);
+            return View("Kategoribring", ktg);
+        }
+
+        //güncelle KategoriUpdate viwede
+        public ActionResult KategoriUpdate(Kategori k)
+        {
+            try
+            {
+                var ktg = cntxt.Kategoris.Find(k.KategoriID);
+                ktg.KategoriAd = k.KategoriAd;
+                cntxt.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+           
+        }
+
+
+
     }
 }

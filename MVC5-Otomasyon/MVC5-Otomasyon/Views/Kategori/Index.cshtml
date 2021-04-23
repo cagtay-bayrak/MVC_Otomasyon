@@ -27,9 +27,10 @@
        data-show-export="true"
        data-pagination="true"
        data-search="true"
+        data-strict-search="true"
        data-maintain-selected="true"
        data-sort-name="name"
-           data-sort-order="desc"
+       data-sort-order="desc"
        data-page-size="10"
        data-page-list="[5, 10, 20, 40, 50, 100, ALL]"
        @*data-export-options='{
@@ -43,7 +44,7 @@
 
                 </th>*@
 
-            <th>
+            <th data-sortable="true">
 
                 @Html.DisplayNameFor(model => model.KategoriID)
             </th>
@@ -83,7 +84,7 @@
                     <i class="fa fa-trash" aria-hidden="true"></i>
                 </a>
                 &nbsp;
-                <a href='/Kategori/' class="button" title="Kaydı Güncelle">
+                <a href='/Kategori/Kategoribring/@item.KategoriID' class="button" title="Kaydı Güncelle">
                     <i class="fa fa-edit" aria-hidden="true"></i>
                 </a>
 
