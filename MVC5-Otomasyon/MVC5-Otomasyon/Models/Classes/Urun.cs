@@ -29,7 +29,7 @@ namespace MVC5_Otomasyon.Models.Classes
         public string UrunGorsel { get; set; }
 
         //Bir ürünün bir kategori olabilir ilişkisi
-        public Kategori Kategori { get; set; }
+        public virtual Kategori Kategori { get; set; }
 
         public ICollection<SatisHareket> SatisHarekets { get; set; }
     }

@@ -516,12 +516,12 @@ a > code {
     color: inherit;
 }
 
-.btnKategori {
+.btnStyle {
     fill: #9B9B9B;
     color: black;
 }
 
-    .btnKategori:hover {
+    .btnStyle:hover {
         border: solid 1px #212529;
         font-weight: bold;
     }

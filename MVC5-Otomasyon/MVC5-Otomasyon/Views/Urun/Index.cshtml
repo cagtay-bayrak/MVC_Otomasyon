@@ -1,0 +1,131 @@
+﻿@model IEnumerable<MVC5_Otomasyon.Models.Classes.Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+
+<h4 style="margin-top:20px; text-align:center; color:green">Ürün Listesi</h4>
+
+
+<div id="toolbar">
+    <button class="btn btnStyle" type="submit" onclick="location.href='@Url.Action("Create")'"> <i class="fa fa-plus-circle" style="color: green;"></i> Kategori Ekle</button>
+</div>
+
+
+<table id="table"
+       data-click-to-select="true"
+       data-toggle="table"
+       data-toolbar="#toolbar"
+       data-show-export="true"
+       data-pagination="true"
+       data-search="true"
+       data-strict-search="true"
+       data-maintain-selected="true"
+       data-sort-name="name"
+       data-sort-order="desc"
+       data-page-size="10"
+       data-page-list="[5, 10, 20, 40, 50, 100, ALL]"
+       @*data-export-options='{
+         "fileName": "test",
+         "ignoreColumn": ["state"]
+       }'*@>
+    <thead>
+        <tr>
+
+            @*<th data-field="state" data-checkbox="true" id="chcstate">
+
+                </th>*@
+
+            <th data-sortable="true">
+
+                <span>UrunID</span>
+            </th>
+            <th data-sortable="true">
+
+                <span>Ürün Adı</span>
+            </th>
+            <th>
+                <span>Marka</span>
+            </th>
+            <th>
+                <span>Stok</span>
+            </th>
+            <th>
+                <span>AlisFiyat</span>
+            </th>
+            <th>
+                <span>SatisFiyati</span>
+            </th>
+            <th>
+                <span>Durum</span>
+            </th>
+            <th>
+                <span>Kategori</span>
+            </th>
+            <th>
+                <span>UrunGorsel</span>
+            </th>
+
+
+
+            <th></th>
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td></td>*@
+
+            <td>
+                <b>
+                    @Html.DisplayFor(modelItem => item.UrunID)
+                </b>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marka)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stok)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlisFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SatisFiyati)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Durum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kategori.KategoriAd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UrunGorsel)
+            </td>
+
+
+
+
+
+
+            <td>
+
+                @*<a href="/Kategori/KategoriDelete/@item.KategoriID" class="button" title="Kaydı sil" style="color:red;">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                    &nbsp;
+                    <a href='/Kategori/Kategoribring/@item.KategoriID' class="button" title="Kaydı Güncelle">
+                        <i class="fa fa-edit" aria-hidden="true"></i>
+                    </a>*@
+
+            </td>
+
+        </tr>
+    }
+</table>
